@@ -1,3 +1,5 @@
+<img align="center" src="https://media-exp1.licdn.com/dms/image/C560BAQELq6lcdu8Xkg/company-logo_200_200/0/1613521319124?e=2159024400&v=beta&t=rkziCjgTtGAmYcAJcMnjog3MjCWaxBNuptvnMhynvno" alt="Logo Sauter" style="zoom:100%;" />
+
 # Desafio: Capturar dados de Loja de Aplicativo - Google Play
 
 ## Tópicos:
@@ -12,7 +14,7 @@
 ------
 
 ## Descrição do projeto
-O Desafio Python tem como objetivo reflitir alguns desafios que um Engenheiro de Dados possa enfrentar na Sauter.
+O Desafio Python tem como objetivo reflitir alguns desafios que um Engenheiro de Dados possa enfrentar na [Sauter](https://sauter.digital/).
 
 ⚠ É importante saber que há múltiplos formatos para a resolução do desafio e será necessário consultar documentações (algumas das quais colocaremos o link aqui).
 

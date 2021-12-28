@@ -1,4 +1,6 @@
-<img align="center" src="https://media-exp1.licdn.com/dms/image/C560BAQELq6lcdu8Xkg/company-logo_200_200/0/1613521319124?e=2159024400&v=beta&t=rkziCjgTtGAmYcAJcMnjog3MjCWaxBNuptvnMhynvno" alt="Logo Sauter" style="zoom:100%;" />
+<center>
+    <img src="https://media-exp1.licdn.com/dms/image/C560BAQELq6lcdu8Xkg/company-logo_200_200/0/1613521319124?e=2159024400&v=beta&t=rkziCjgTtGAmYcAJcMnjog3MjCWaxBNuptvnMhynvno" alt="Logo Sauter" style="zoom:100%;" />
+</center>
 
 # Desafio: Capturar dados de Loja de Aplicativo - Google Play
 

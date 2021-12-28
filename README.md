@@ -6,7 +6,7 @@
 - [Deploy da Aplicação](#deploy-da-aplicação)
 - [Pré-requisitos](#pré-requisitos)
 - [Como rodar a aplicação](#como-rodar-a-aplicação)
-- [Linguagens, dependencias e libs utilizadas](#linguagens,-dependencias-e-libs-utilizadas)
+- [Linguagens, dependencias e libs utilizadas](#linguagens-dependencias-e-libs-utilizadas)
 - [Tarefas em aberto](#tarefas-em-aberto)
 
 ------

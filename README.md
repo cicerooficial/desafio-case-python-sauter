@@ -18,7 +18,7 @@
 ------
 
 ## 📝 Descrição do projeto
-O Desafio Python tem como objetivo reflitir alguns desafios que um Engenheiro de Dados possa enfrentar na [Sauter](https://sauter.digital/).
+O Desafio Python tem como objetivo refletir alguns desafios que um Engenheiro de Dados possa enfrentar na [Sauter](https://sauter.digital/).
 
 ⚠ É importante saber que há múltiplos formatos para a resolução do desafio e será necessário consultar documentações (algumas das quais estão identificadas abaixo).
 
@@ -79,12 +79,19 @@ Tarefa 3 - Criar Pipeline de dados
 
 ## 🗃 Linguagens, dependencias e libs utilizadas
 
-|Lang/Lib/Framwork    |Version          |
-|---------------------|---------        |
-|Python               |3.8              |
-|Google-Play-Scraper  |v1.0.2           |
-|Pandas               |v1.3.5           |
-|Pandas Profiling     |v3.1.0           |
+|Lang/Lib/Framwork             |Version          |
+|------------------------------|-----------------|
+|Google Colab                  |                 |
+|Python                        |3.8              |
+|Google-Play-Scraper           |v1.0.2           |
+|Pandas                        |v1.3.5           |
+|Pandas Profiling              |v3.1.0           |
+|Google Cloud Storage (GCS)    |                 |
+|BigQuery                      |                 |
+|Docker                        |v4.3.2           |
+|Docker Compose                |v1.29.2          |
+|Apache Airflow                |v2.0.2           |
+
 
 ------
 ## 📚 Referências
@@ -96,3 +103,6 @@ Tarefa 3 - Criar Pipeline de dados
 - [Como criar buckets de armazenamento](https://cloud.google.com/storage/docs/creating-buckets#storage-create-bucket-gsutil)
 - [Como criar um conjunto de dados](https://cloud.google.com/bigquery/docs/datasets#create-dataset)
 - [Como carregar dados CSV em uma tabela](https://cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv#loading_csv_data_into_a_table)
+- [ETL com Airflow, Google Cloud Storage e BigQuery](https://github.com/okzapradhana/etl-flatfile-airflow#etl-with-airflow-google-cloud-storage-and-bigquery)
+- [Executando o Airflow no Docker](https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html)
+- 

@@ -105,7 +105,9 @@ Tarefa 3 - Criar Pipeline de dados
 |---------------------|---------        |
 |Python               |3.6, 3.7 ou 3.8  |
 |Google-Play-Scraper  |v1.0.2           |
+|Pandas               |v1.3.5           |
 |Pandas Profiling     |v3.1.0           |
+
 
 
 ------

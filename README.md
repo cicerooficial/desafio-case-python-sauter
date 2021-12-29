@@ -40,12 +40,10 @@ A partir desse Data Frame, seguem as atividades propostas na tarefa:
     1. aval_positiva.csv para score maior ou igual a 4; 
     2. aval_neutra.csv para score igual a 3;
     3. aval_negativa.csv para score inferior a 3.
-- [Pasta com arquivos CSV](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/csv)
 
 3.  Criar um report simples para essas variáveis utilizando a library [pandas-profiling](https://pandas-profiling.github.io/pandas-profiling/docs/master/index.html) para cada uma das separações (aval_neutra, aval_positiva, aval_negativa). </br>
 ⚠ É importante notar os principais pontos de cada análise para sua apresentação.</br>
 Finalmente, salvar o resultado do profile em formato .html.
-- [Pasta com reports em html](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/reports)
 
 ### ✅ Tarefa 2: 
 1. A partir dos dados criados, subir as tabelas para um banco de dados.
@@ -67,8 +65,10 @@ Finalmente, salvar o resultado do profile em formato .html.
 
 Tarefa 1 - Capturar dados de Loja de Aplicativo - Google Play
 1. Acessar o Google Colab: https://colab.research.google.com/drive/1ak9TAlvzWBj5Hh39swM8iG-uF1dVaDe6?usp=sharing;
-2. Acessar o diretótio do arquivo baixado: 
+2. Acessar diretamente o arquivo no diretório: 
 [Google Colab - Capturando dados com Google-Play-Scraper](https://github.com/cicerooficial/desafio-case-python-sauter/blob/main/google_play_scraper_alexa.ipynb)
+- [Pasta com arquivos CSV](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/csv)
+- [Pasta com reports em html](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/reports)
 
 Tarefa 2 - Subir as tabelas para um BD
 1. Acesse o arquivo com o passo: [Armazenar dados no BigQuery](https://github.com/cicerooficial/desafio-case-python-sauter/blob/main/Armazenar_dados_no_BigQuery.md)

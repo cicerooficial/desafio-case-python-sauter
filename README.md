@@ -7,7 +7,7 @@
 
 # Desafio: Capturar dados de Loja de Aplicativo - Google Play
 
-## Tópicos:
+## 📌 Tópicos:
 - [Descrição do projeto](#descrição-do-projeto)
 - [Objetivos](#objetivos)
 - [Pré-requisitos](#pré-requisitos)
@@ -17,14 +17,14 @@
 
 ------
 
-## Descrição do projeto
+## 📝 Descrição do projeto
 O Desafio Python tem como objetivo reflitir alguns desafios que um Engenheiro de Dados possa enfrentar na [Sauter](https://sauter.digital/).
 
-⚠ É importante saber que há múltiplos formatos para a resolução do desafio e será necessário consultar documentações (algumas das quais colocaremos o link aqui).
+⚠ É importante saber que há múltiplos formatos para a resolução do desafio e será necessário consultar documentações (algumas das quais estão identificadas abaixo).
 
 ------
 
-## Objetivos
+## 🎯 Objetivos
 
 ### ✅ Tarefa 1: 
 Sua primeira tarefa é utilizar a library google-play-scraper para capturar dados de apps.
@@ -58,12 +58,12 @@ Finalmente, salvar o resultado do profile em formato .html.
 
 ------
 
-## Pré-requisitos
+## ❗ Pré-requisitos
 
 
 ------
 
-## Como rodar a aplicação
+## 🔄 Como rodar a aplicação
 
 Tarefa 1 - Capturar dados de Loja de Aplicativo - Google Play
 1. Acessar o Google Colab: https://colab.research.google.com/drive/1ak9TAlvzWBj5Hh39swM8iG-uF1dVaDe6?usp=sharing;
@@ -77,7 +77,7 @@ Tarefa 3 - Criar Pipeline de dados
 
 ------
 
-## Linguagens, dependencias e libs utilizadas
+## 🗃 Linguagens, dependencias e libs utilizadas
 
 |Lang/Lib/Framwork    |Version          |
 |---------------------|---------        |
@@ -87,7 +87,7 @@ Tarefa 3 - Criar Pipeline de dados
 |Pandas Profiling     |v3.1.0           |
 
 ------
-## Referências
+## 📚 Referências
 
 - [Documentação google-play-scraper 1.0.2](https://pypi.org/project/google-play-scraper/)
 - [Documentação Pandas API reference](https://pandas.pydata.org/docs/reference/)

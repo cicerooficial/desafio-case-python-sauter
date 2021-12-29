@@ -40,11 +40,12 @@ A partir desse Data Frame, seguem as atividades propostas na tarefa:
     1. aval_positiva.csv para score maior ou igual a 4; 
     2. aval_neutra.csv para score igual a 3;
     3. aval_negativa.csv para score inferior a 3.
+- [Pasta com arquivos CSV](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/csv)
 
-3.  Criar um report simples para essas variáveis utilizando a library pandas profiling para
-cada uma das separações (aval_neutra, aval_positiva, aval_negativa). </br>
+3.  Criar um report simples para essas variáveis utilizando a library [pandas-profiling](https://pandas-profiling.github.io/pandas-profiling/docs/master/index.html) para cada uma das separações (aval_neutra, aval_positiva, aval_negativa). </br>
 ⚠ É importante notar os principais pontos de cada análise para sua apresentação.</br>
 Finalmente, salvar o resultado do profile em formato .html.
+- [Pasta com reports em html](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/reports)
 
 ### ✅ Tarefa 2: 
 1. A partir dos dados criados, subir as tabelas para um banco de dados.

@@ -5,7 +5,7 @@
 
 </center>
 
-# Desafio: Capturar dados de Loja de Aplicativo - Google Play
+# Desafio Sauter: Capturar dados de Loja de Aplicativo - Google Play
 
 <p align="center">
     <img src="https://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>

@@ -146,11 +146,13 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
 ------
 ## 📝 Tarefas em aberto
 
-⬜1. Enviar via Python, tabelas CSV para o Google Cloud Storage;
+⬜1. Criar função Python para:
+- Extrair dados do app no Google Play;
+- Enviar dados para o Google Cloud Storage;
+- Baixar CSVs do Cloud Storage e tranformar em Dataframe
+- Caregar datafranmes em uma tabela no DataWarehouse(BigQuery);
 
-⬜2. Criar funções em Python para extrair CSV do Cloud Storage, tranformar em Dataframe e subir no BigQuery;
-
-⬜3. Manipular as funções via pipeline Airflow através de DAGs.
+⬜2. Criar pipeline da função acima via Airflow através de DAGs.
 
 ------
 ## 🗃 Linguagens, dependencias e libs utilizadas

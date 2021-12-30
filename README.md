@@ -7,6 +7,25 @@
 
 # Desafio: Capturar dados de Loja de Aplicativo - Google Play
 
+<p align="center">
+    <img src="https://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
+    <img src="https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&color=525252"/>
+    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white"/>
+	<img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white"/>
+	<img src="https://img.shields.io/badge/Airflow-017CEE?style=for-the-badge&logo=Apache%20Airflow&logoColor=white"/>
+
+</p>
+
+- Autor: Cícero Henrique
+- E-mail: cicerooficial@gmail.com
+- Linkedin: https://www.linkedin.com/in/cicero-henrique-santos/
+- GitHub: https://github.com/cicerooficial
+- Repositório deste projeto completo: https://github.com/cicerooficial/desafio-case-python-sauter
+
+------
+
 ## 📌 Tópicos:
 - [Descrição do projeto](#descrição-do-projeto)
 - [Objetivos](#objetivos)
@@ -58,39 +77,84 @@ Finalmente, salvar o resultado do profile em formato .html.
 
 ## ❗ Pré-requisitos
 
+Para a Tarefa 3, configure o docker em sua máquina seguindo os passos abaixo:
+
+## Configurando o Docker em sua máquina:
+
+A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um passo a passo de preparação de ambiente.
+
+### Download Docker e Docker Compose:
+
+### Download Docker - Windows
+
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+### Instalação Docker - Windows
+
+1. Verificar se o Windows está atualizado. Caso seja inferiro a 18362, clique no link ao lado para atualizar o Windows 10. [Atualizar o Windows](https://www.microsoft.com/pt-br/software-download/windows10);
+2. Pesquise por Ativar ou desativar recursos do Windows e siga os passos abaixo:
+    - Desativar Hyper-V;
+    - Desativar Plataforma do Hipervisor do Windows;
+    - Habilitar a Plataforma de Máquina Virtual;
+    - Habilitar o Subsistema do Windows para Linux (WSL).
+3. Faça o Download do WSL 2 clicando no link ao lado: [Download WSL 2](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi);
+4. Acesse a Microsoft Store, e faça download e instale a distribuição Linux Ubuntu 20.04 LTS (recomendado);
+5. Instale o Docker Desktop no Windows: [Docker Desktop](https://hub.docker.com/editions/community/docker-ce-desktop-windows);
+    - Obs: Abra o Docker Desktop e verifique se estão habilitados o "Enable integration with my default WSL distro" e "Ubuntu-20.04" em Settings->Resource->WSL Integration.
+
+### Instalação Docker - Linux
+
+- [Link para instalação do Docker Engine](https://docs.docker.com/engine/install/)
+- [Link para instalação do Docker Compose](https://docs.docker.com/compose/install/)
+
+### Instalação Docker - Mac
+- [Link para instalação do Docker Desktop no Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac/)
 
 ------
 
 ## 🔄 Como rodar a aplicação
 
-Tarefa 1 - Capturar dados de Loja de Aplicativo - Google Play
-1. Acessar o Google Colab: https://colab.research.google.com/drive/1ak9TAlvzWBj5Hh39swM8iG-uF1dVaDe6?usp=sharing;
-2. Acessar diretamente o arquivo no diretório: 
-[Google Colab - Capturando dados com Google-Play-Scraper](https://github.com/cicerooficial/desafio-case-python-sauter/blob/main/google_play_scraper_alexa.ipynb)
-- [Pasta com arquivos CSV](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/csv)
-- [Pasta com reports em html](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/reports)
+- Tarefa 1 - Capturar dados de Loja de Aplicativo - Google Play
+    1. Acessar o Google Colab: https://colab.research.google.com/drive/1ak9TAlvzWBj5Hh39swM8iG-uF1dVaDe6?usp=sharing;
+    2. Acessar diretamente o arquivo no diretório: 
+    [Google Colab - Capturando dados com Google-Play-Scraper](https://github.com/cicerooficial/desafio-case-python-sauter/blob/main/google_play_scraper_alexa.ipynb)
+    - [Pasta com arquivos CSV](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/csv)
+    - [Pasta com reports em html](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/reports)
+    
+- Tarefa 2 - Subir as tabelas para um BD
+    1. Acesse o arquivo com o passo: [Armazenar dados no BigQuery](https://github.com/cicerooficial/desafio-case-python-sauter/blob/main/Armazenar_dados_no_BigQuery.md)
 
-Tarefa 2 - Subir as tabelas para um BD
-1. Acesse o arquivo com o passo: [Armazenar dados no BigQuery](https://github.com/cicerooficial/desafio-case-python-sauter/blob/main/Armazenar_dados_no_BigQuery.md)
+- Tarefa 3 - Criar Pipeline de dados
 
-Tarefa 3 - Criar Pipeline de dados
-
+    1. Abra o terminal do WSL2 e crie um diretório para o projeto no `~$/home/<seu-nome>` com o comando: `mkdir apache-airflow`;
+    2. Acesse o diretório `cd apache-airflow`;
+    3. No diretório apache-airflow, baixe o arquivo `docker-compose.yaml` disponibilizado na documentação oficial: `curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.2.3/docker-compose.yaml'`;
+    4. Confirme se o arquivo foi baixado com o comando de listar: `ls`;
+    5. No Linux , o início rápido precisa saber a id do usuário do host e precisa ter a id do grupo definida como 0. Caso contrário, os arquivos criados no dags, logse pluginsserá criado com rootusuário. Você deve certificar-se de configurá-los para o docker-compose:
+     `mkdir -p ./dags ./logs ./plugins` | `echo -e "AIRFLOW_UID=$(id -u)" > .env`;
+    6. Em todos os sistemas operacionais , você precisa executar migrações de banco de dados e criar a primeira conta de usuário. Para fazer isso, corra.
+    `docker-compose up airflow-init`;
+    7. Inicie todos os serviços: `docker-compose up`;
+    8. Acesse o servidor web do Airflow disponível em: http://localhost:8080. A conta padrão possui o login **airflowe** a senha **airflow**.
+    
+    
 ------
 
 ## 🗃 Linguagens, dependencias e libs utilizadas
 
 |Lang/Lib/Framwork             |Version          |
 |------------------------------|-----------------|
-|Google Colab                  |                 |
 |Python                        |3.8              |
 |Google-Play-Scraper           |v1.0.2           |
 |Pandas                        |v1.3.5           |
 |Pandas Profiling              |v3.1.0           |
-|Google Cloud Storage (GCS)    |                 |
-|BigQuery                      |                 |
 |Docker                        |v4.3.2           |
 |Docker Compose                |v1.29.2          |
 |Apache Airflow                |v2.0.2           |
+|Google Colab                  |                 |
+|Google Cloud Storage (GCS)    |                 |
+|Google BigQuery (GBQ)         |                 |
 
 
 ------
@@ -105,4 +169,3 @@ Tarefa 3 - Criar Pipeline de dados
 - [Como carregar dados CSV em uma tabela](https://cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv#loading_csv_data_into_a_table)
 - [ETL com Airflow, Google Cloud Storage e BigQuery](https://github.com/okzapradhana/etl-flatfile-airflow#etl-with-airflow-google-cloud-storage-and-bigquery)
 - [Executando o Airflow no Docker](https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html)
-- 

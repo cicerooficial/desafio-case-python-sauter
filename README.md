@@ -139,17 +139,18 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
     8. Acesse o servidor web do Airflow disponível em: http://localhost:8080. A conta padrão possui o login **airflowe** a senha **airflow**.
     ![Acesso ao Apache Airflow](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow2.png)
 
-- Design de pipeline proposto com Airflow:    
-![Design Pipeline Airflow](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/design_pipeline_airflow.png)
+
+    ### Design de pipeline proposto com Airflow:    
+    ![Design Pipeline Airflow](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/design_pipeline_airflow.png)
     
 ------
 ## 📝 Tarefas em aberto
 
-⬜1. Enviar via Python, tabelas CSV para o BigQuery;
+⬜1. Enviar via Python, tabelas CSV para o Google Cloud Storage;
 
-⬜2. Criar funções de tarefas (tasks) em Python;
+⬜2. Criar funções em Python para extrair CSV do Cloud Storage, tranformar em Dataframe e subir no BigQuery;
 
-⬜3. Executar tarefas(tasks) via Airflow através de DAGs.
+⬜3. Manipular as funções via pipeline Airflow através de DAGs.
 
 ------
 ## 🗃 Linguagens, dependencias e libs utilizadas

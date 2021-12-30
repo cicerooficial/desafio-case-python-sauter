@@ -21,8 +21,6 @@
 - Autor: Cícero Henrique
 - E-mail: cicerooficial@gmail.com
 - Linkedin: https://www.linkedin.com/in/cicero-henrique-santos/
-- GitHub: https://github.com/cicerooficial
-- Repositório deste projeto completo: https://github.com/cicerooficial/desafio-case-python-sauter
 
 ------
 

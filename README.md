@@ -18,7 +18,7 @@
 
 </p>
 
-- Autor: Cícero Henrique
+- Autor: Cícero Henrique dos Santos
 - E-mail: cicerooficial@gmail.com
 - Linkedin: https://www.linkedin.com/in/cicero-henrique-santos/
 
@@ -131,9 +131,9 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
     4. Confirme se o arquivo foi baixado com o comando de listar: `ls`;
     5. No Linux , o início rápido precisa saber a id do usuário do host e precisa ter a id do grupo definida como 0. Caso contrário, os arquivos criados no dags, logse pluginsserá criado com rootusuário. Você deve certificar-se de configurá-los para o docker-compose:
      `mkdir -p ./dags ./logs ./plugins` | `echo -e "AIRFLOW_UID=$(id -u)" > .env`;
-    6. Em todos os sistemas operacionais , você precisa executar migrações de banco de dados e criar a primeira conta de usuário. Para fazer isso, corra.
+    6. Em todos os sistemas operacionais , você precisa executar migrações de banco de dados e criar a primeira conta de usuário. Para fazer isso, execute:
     `docker-compose up airflow-init`;
-    7. Inicie todos os serviços: `docker-compose up`;
+    7. Inicie todos os serviços: `docker-compose up -d`;
     8. Acesse o servidor web do Airflow disponível em: http://localhost:8080. A conta padrão possui o login **airflowe** a senha **airflow**.
     
     

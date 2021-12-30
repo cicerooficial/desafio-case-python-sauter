@@ -29,6 +29,7 @@
 - [Objetivos](#objetivos)
 - [Pré-requisitos](#pré-requisitos)
 - [Como rodar a aplicação](#como-rodar-a-aplicação)
+- [Tarefas em aberto](#tarefas-em-aberto)
 - [Linguagens, dependencias e libs utilizadas](#linguagens-dependencias-e-libs-utilizadas)
 - [Referências](#referências)
 
@@ -134,13 +135,18 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
     6. Em todos os sistemas operacionais , você precisa executar migrações de banco de dados e criar a primeira conta de usuário. Para fazer isso, execute:
     `docker-compose up airflow-init`;
     7. Inicie todos os serviços: `docker-compose up -d`;
-![Instalação Airflow Terminal](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow1.png)
+    ![Instalação Airflow Terminal](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow1.png)
     1. Acesse o servidor web do Airflow disponível em: http://localhost:8080. A conta padrão possui o login **airflowe** a senha **airflow**.
-![Acesso ao Apache Airflow](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow2.png)
-    
+    ![Acesso ao Apache Airflow](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow2.png)
     
 ------
+## 📝 Tarefas em aberto
 
+1. Enviar via Python, tabelas CSV para o BigQuery;
+2. Criar funções de tarefas(tasks) em Python;
+3. Executar tarefas(tasks) via Airflow através de DAGs.
+
+------
 ## 🗃 Linguagens, dependencias e libs utilizadas
 
 |Lang/Lib/Framwork             |Version          |
@@ -169,3 +175,5 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
 - [Como carregar dados CSV em uma tabela](https://cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv#loading_csv_data_into_a_table)
 - [ETL com Airflow, Google Cloud Storage e BigQuery](https://github.com/okzapradhana/etl-flatfile-airflow#etl-with-airflow-google-cloud-storage-and-bigquery)
 - [Executando o Airflow no Docker](https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html)
+- [Google Cloud Client Libraries for google-cloud-storage](https://googleapis.dev/python/storage/latest/index.html)
+- [Google Auth Library for Python](https://google-auth.readthedocs.io/en/master/reference/google.oauth2.service_account.html)

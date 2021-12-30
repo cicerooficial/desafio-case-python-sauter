@@ -134,7 +134,9 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
     6. Em todos os sistemas operacionais , você precisa executar migrações de banco de dados e criar a primeira conta de usuário. Para fazer isso, execute:
     `docker-compose up airflow-init`;
     7. Inicie todos os serviços: `docker-compose up -d`;
-    8. Acesse o servidor web do Airflow disponível em: http://localhost:8080. A conta padrão possui o login **airflowe** a senha **airflow**.
+![Instalação Airflow Terminal](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow1.png)
+    1. Acesse o servidor web do Airflow disponível em: http://localhost:8080. A conta padrão possui o login **airflowe** a senha **airflow**.
+![Acesso ao Apache Airflow](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow2.png)
     
     
 ------

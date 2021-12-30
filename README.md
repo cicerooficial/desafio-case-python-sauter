@@ -138,6 +138,7 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
     ![Instalação Airflow Terminal](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow1.png)
     1. Acesse o servidor web do Airflow disponível em: http://localhost:8080. A conta padrão possui o login **airflowe** a senha **airflow**.
     ![Acesso ao Apache Airflow](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow2.png)
+    ![Design Pipeline Airflow](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/design_pipeline_airflow.png)
     
 ------
 ## 📝 Tarefas em aberto

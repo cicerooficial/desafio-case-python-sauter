@@ -197,5 +197,5 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
 - [Como configurar a variável de ambiente para autenticação](https://cloud.google.com/docs/authentication/getting-started#windows)
 - [Autenticação com pandas-bq](https://pandas-gbq.readthedocs.io/en/latest/howto/authentication.html)
 - [Módulo de autenticação google-auth](https://google-auth.readthedocs.io/en/master/reference/google.oauth2.service_account.html)
-- [pip documentation v21.3.1](https://pip.pypa.io/en/stable/user_guide/#requirements-files)
+- [Documentation pip v21.3.1](https://pip.pypa.io/en/stable/user_guide/#requirements-files)
 - [Documentação Apache Airflow Exemplo de Pipeline](https://airflow.apache.org/docs/apache-airflow/1.10.1/tutorial.html#example-pipeline-definition)

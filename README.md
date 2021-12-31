@@ -69,8 +69,11 @@ Finalmente, salvar o resultado do profile em formato .html.
 
     ⚠ Caso prefira utilizar outro banco de dados de seu domínio também vale como problema resolvido.
 
-### ⬜ Tarefa 3: 
+### ✅ Tarefa 3: 
 1. Criar objeto com operações de captura de dados, com atualização da tabela. O objetivo aqui é criar um pipeline simplificado de dados para o banco, de forma que a tabela seja sempre atualizada com as últimas informações de reviews.
+
+#### Design de pipeline proposto com Airflow:    
+![Design Pipeline Airflow](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/design_pipeline_airflow.png)
 
 ------
 
@@ -138,10 +141,6 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
     ![Instalação Airflow Terminal](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow1.png)
     8. Acesse o servidor web do Airflow disponível em: http://localhost:8080. A conta padrão possui o login **airflowe** a senha **airflow**.
     ![Acesso ao Apache Airflow](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow2.png)
-
-
-    ### Design de pipeline proposto com Airflow:    
-    ![Design Pipeline Airflow](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/design_pipeline_airflow.png)
     
 ------
 ## 📝 Tarefas em aberto
@@ -196,5 +195,7 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
 - [Como fazer o download de objetos](https://cloud.google.com/storage/docs/downloading-objects#storage-download-object-python)
 - [Como fazer upload de objetos](https://cloud.google.com/storage/docs/uploading-objects#storage-upload-object-code-sample)
 - [Como configurar a variável de ambiente para autenticação](https://cloud.google.com/docs/authentication/getting-started#windows)
+- [Autenticação com pandas-bq](https://pandas-gbq.readthedocs.io/en/latest/howto/authentication.html)
+- [Módulo de autenticação google-auth](https://google-auth.readthedocs.io/en/master/reference/google.oauth2.service_account.html)
 - [pip documentation v21.3.1](https://pip.pypa.io/en/stable/user_guide/#requirements-files)
-- [Documentação Apache Airflow](https://airflow.apache.org/docs/apache-airflow/1.10.1/index.html)
+- [Documentação Apache Airflow Exemplo de Pipeline](https://airflow.apache.org/docs/apache-airflow/1.10.1/tutorial.html#example-pipeline-definition)

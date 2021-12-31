@@ -157,6 +157,8 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
 
 ⬜ 4. Criar exemplo de Deploy do pipeline via Airflow.
 
+⬜ 5. Corrigir erro de dependencia google-play-scraper da função scraper_google_play(self) para realizar ETL completo;
+
 ------
 ## 🗃 Linguagens, dependencias e libs utilizadas
 
@@ -199,3 +201,7 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
 - [Módulo de autenticação google-auth](https://google-auth.readthedocs.io/en/master/reference/google.oauth2.service_account.html)
 - [Documentation pip v21.3.1](https://pip.pypa.io/en/stable/user_guide/#requirements-files)
 - [Documentação Apache Airflow Exemplo de Pipeline](https://airflow.apache.org/docs/apache-airflow/1.10.1/tutorial.html#example-pipeline-definition)
+
+------
+## 📎 Conclusão
+

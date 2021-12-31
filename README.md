@@ -127,6 +127,10 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
     1. Acesse o arquivo com o passo: [Armazenar dados no BigQuery](https://github.com/cicerooficial/desafio-case-python-sauter/blob/main/Armazenar_dados_no_BigQuery.md)
 
 - Tarefa 3 - Criar Pipeline de dados
+    1. Acesse a pasta dags para mais informações sobre o desenvolvimento da tarefa 3 e arquivos: [Pasta dags](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/dags)
+
+![]()
+![]()
 
     1. Abra o terminal do WSL2 e crie um diretório para o projeto no `~$/home/<seu-nome>` com o comando: `mkdir apache-airflow`;
     2. Acesse o diretório `cd apache-airflow`;

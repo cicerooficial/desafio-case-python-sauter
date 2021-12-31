@@ -3,10 +3,10 @@
 
 # Importa bibliotecas necessárias para criação desde Pipeline
 import airflow
-from airflow                            import DAG
-from datetime                           import datetime, timedelta
-from airflow.operators.python_operator  import PythonOperator
-from etl_with_gcp_and_airflow           import etl_with_gcp
+from airflow                                                import DAG
+from datetime                                               import datetime, timedelta
+from airflow.operators.python_operator                      import PythonOperator
+from etl_with_gcp_and_airflow.etl_with_gcp_and_airflow      import etl_with_gcp
 
 # Configurações de execução
 default_args = {

@@ -145,17 +145,17 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
 ------
 ## 📝 Tarefas em aberto
 
-⬜1. No Google Colab, enviar dados CSV para o BigQuery via Python; 
+✅ 1. No Google Colab, enviar dados CSV para o BigQuery via Python; 
 
-⬜2. Criar função Python para:
-- Extrair dados do app no Google Play;
-- Enviar dados para o Google Cloud Storage;
-- Baixar CSVs do Cloud Storage e tranformar em Dataframe
-- Caregar datafranmes em uma tabela no DataWarehouse(BigQuery).
+✅ 2. Criar função Python para:
+    - Extrair dados do app no Google Play;
+    - Enviar dados para o Google Cloud Storage;
+    - Baixar CSVs do Cloud Storage e tranformar em Dataframe
+    - Caregar datafranmes em uma tabela no DataWarehouse(BigQuery).
 
-⬜3. Criar pipeline da função acima via Airflow através de DAGs.
+✅ 3. Criar pipeline da função acima via Airflow através de DAGs.
 
-⬜4. Criar exemplo de Deploy do pipeline via Airflow.
+⬜ 4. Criar exemplo de Deploy do pipeline via Airflow.
 
 ------
 ## 🗃 Linguagens, dependencias e libs utilizadas

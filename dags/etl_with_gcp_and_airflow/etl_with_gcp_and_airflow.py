@@ -46,8 +46,11 @@ class etl_with_gcp():
  
     #Classe de construtores para sempre iniciar por esta antes das demais e subir as chaves
     def __init__(self):
-        self.my_credential = service_account.Credentials.from_service_account_file('C:/Users/cicer/Documents/GitHub/desafio-case-python-sauter/dags/etl_with_gcp_and_airflow/nifty-foundry-336623-dad5e810d66e.json', scopes=SCOPE)
-        self.client = storage.Client.from_service_account_json('C:/Users/cicer/Documents/GitHub/desafio-case-python-sauter/dags/etl_with_gcp_and_airflow/nifty-foundry-336623-dad5e810d66e.json')   # Acesso ao Google Cloud Storage 
+        #PARA TESTE NO WINDOWS
+        #self.my_credential = service_account.Credentials.from_service_account_file('C:/Users/cicer/Documents/GitHub/desafio-case-python-sauter/dags/etl_with_gcp_and_airflow/nifty-foundry-336623-dad5e810d66e.json', scopes=SCOPE)
+        #self.client = storage.Client.from_service_account_json('C:/Users/cicer/Documents/GitHub/desafio-case-python-sauter/dags/etl_with_gcp_and_airflow/nifty-foundry-336623-dad5e810d66e.json')   # Acesso ao Google Cloud Storage 
+        self.my_credential = service_account.Credentials.from_service_account_file('/opt/airflow/dags/etl_with_gcp_and_airflow/nifty-foundry-336623-dad5e810d66e.json', scopes=SCOPE)
+        self.client = storage.Client.from_service_account_json('/opt/airflow/dags/etl_with_gcp_and_airflow/nifty-foundry-336623-dad5e810d66e.json')   # Acesso ao Google Cloud Storage 
 
     #Função para capturar(extrair) dados no google play e enviar dados em arquivos csv para o Google Cloud Storage
     

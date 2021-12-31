@@ -1,4 +1,3 @@
-
 <center>
 
 ![Logo Sauter](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/logo_sauter.png)

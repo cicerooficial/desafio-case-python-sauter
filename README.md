@@ -129,8 +129,8 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
 - Tarefa 3 - Criar Pipeline de dados
     1. Acesse a pasta dags para mais informações sobre o desenvolvimento da tarefa 3 e arquivos: [Pasta dags](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/dags)
 
-![]()
-![]()
+![Painel Pipeline OK 1 ](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/pipeline_ok_2.png)
+![Painel Pipeline OK 2](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/pipeline_ok.png)
 
     1. Abra o terminal do WSL2 e crie um diretório para o projeto no `~$/home/<seu-nome>` com o comando: `mkdir apache-airflow`;
     2. Acesse o diretório `cd apache-airflow`;

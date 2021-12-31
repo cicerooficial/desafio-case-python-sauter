@@ -146,13 +146,17 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
 ------
 ## 📝 Tarefas em aberto
 
-⬜1. Criar função Python para:
+⬜1. No Google Colab, enviar dados CSV para o BigQuery via Python; 
+
+⬜2. Criar função Python para:
 - Extrair dados do app no Google Play;
 - Enviar dados para o Google Cloud Storage;
 - Baixar CSVs do Cloud Storage e tranformar em Dataframe
-- Caregar datafranmes em uma tabela no DataWarehouse(BigQuery);
+- Caregar datafranmes em uma tabela no DataWarehouse(BigQuery).
 
-⬜2. Criar pipeline da função acima via Airflow através de DAGs.
+⬜3. Criar pipeline da função acima via Airflow através de DAGs.
+
+⬜4. Criar exemplo de Deploy do pipeline via Airflow.
 
 ------
 ## 🗃 Linguagens, dependencias e libs utilizadas
@@ -160,12 +164,15 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
 |Lang/Lib/Framwork             |Version          |
 |------------------------------|-----------------|
 |Python                        |3.8              |
-|Google-Play-Scraper           |v1.0.2           |
-|Pandas                        |v1.3.5           |
-|Pandas Profiling              |v3.1.0           |
+|google-play-scraper           |v1.0.2           |
+|pandas                        |v1.3.5           |
+|pandas-profiling              |v3.1.0           |
+|pandas_gbq                    |v0.15.0          |
 |Docker                        |v4.3.2           |
 |Docker Compose                |v1.29.2          |
 |Apache Airflow                |v2.0.2           |
+|google-cloud-storage          |v1.43.0          |
+|pip                           |v21.3.1          |
 |Google Colab                  |                 |
 |Google Cloud Storage (GCS)    |                 |
 |Google BigQuery (GBQ)         |                 |
@@ -180,8 +187,14 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
 - [Como criar um projeto no GCP](https://cloud.google.com/resource-manager/docs/creating-managing-projects?hl=pt-br&visit_id=637763797785493881-2801279509&rd=1#creating_a_project)
 - [Como criar buckets de armazenamento](https://cloud.google.com/storage/docs/creating-buckets#storage-create-bucket-gsutil)
 - [Como criar um conjunto de dados](https://cloud.google.com/bigquery/docs/datasets#create-dataset)
-- [Como carregar dados CSV em uma tabela](https://cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv#loading_csv_data_into_a_table)
+- [Como carregar dados CSV em uma tabela BigQuery](https://cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv#loading_csv_data_into_a_table)
 - [ETL com Airflow, Google Cloud Storage e BigQuery](https://github.com/okzapradhana/etl-flatfile-airflow#etl-with-airflow-google-cloud-storage-and-bigquery)
 - [Executando o Airflow no Docker](https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html)
 - [Google Cloud Client Libraries for google-cloud-storage](https://googleapis.dev/python/storage/latest/index.html)
 - [Google Auth Library for Python](https://google-auth.readthedocs.io/en/master/reference/google.oauth2.service_account.html)
+- [Documentação pandas-gbq](https://pandas-gbq.readthedocs.io/en/latest/)
+- [Como fazer o download de objetos](https://cloud.google.com/storage/docs/downloading-objects#storage-download-object-python)
+- [Como fazer upload de objetos](https://cloud.google.com/storage/docs/uploading-objects#storage-upload-object-code-sample)
+- [Como configurar a variável de ambiente para autenticação](https://cloud.google.com/docs/authentication/getting-started#windows)
+- [pip documentation v21.3.1](https://pip.pypa.io/en/stable/user_guide/#requirements-files)
+- [Documentação Apache Airflow](https://airflow.apache.org/docs/apache-airflow/1.10.1/index.html)

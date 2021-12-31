@@ -132,18 +132,18 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
 ![Painel Pipeline OK 1 ](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/pipeline_ok_2.png)
 ![Painel Pipeline OK 2](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/pipeline_ok.png)
 
-    1. Abra o terminal do WSL2 e crie um diretório para o projeto no `~$/home/<seu-nome>` com o comando: `mkdir apache-airflow`;
-    2. Acesse o diretório `cd apache-airflow`;
-    3. No diretório apache-airflow, baixe o arquivo `docker-compose.yaml` disponibilizado na documentação oficial: `curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.2.3/docker-compose.yaml'`;
-    4. Confirme se o arquivo foi baixado com o comando de listar: `ls`;
-    5. No Linux , o início rápido precisa saber a id do usuário do host e precisa ter a id do grupo definida como 0. Caso contrário, os arquivos criados no dags, logse pluginsserá criado com rootusuário. Você deve certificar-se de configurá-los para o docker-compose:
-     `mkdir -p ./dags ./logs ./plugins` | `echo -e "AIRFLOW_UID=$(id -u)" > .env`;
-    6. Em todos os sistemas operacionais , você precisa executar migrações de banco de dados e criar a primeira conta de usuário. Para fazer isso, execute:
-    `docker-compose up airflow-init`;
-    7. Inicie todos os serviços: `docker-compose up -d`;
-    ![Instalação Airflow Terminal](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow1.png)
-    8. Acesse o servidor web do Airflow disponível em: http://localhost:8080. A conta padrão possui o login **airflowe** a senha **airflow**.
-    ![Acesso ao Apache Airflow](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow2.png)
+1. Abra o terminal do WSL2 e crie um diretório para o projeto no `~$/home/<seu-nome>` com o comando: `mkdir apache-airflow`;
+2. Acesse o diretório `cd apache-airflow`;
+3. No diretório apache-airflow, baixe o arquivo `docker-compose.yaml` disponibilizado na documentação oficial: `curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.2.3/docker-compose.yaml'`;
+4. Confirme se o arquivo foi baixado com o comando de listar: `ls`;
+5. No Linux , o início rápido precisa saber a id do usuário do host e precisa ter a id do grupo definida como 0. Caso contrário, os arquivos criados no dags, logse pluginsserá criado com rootusuário. Você deve certificar-se de configurá-los para o docker-compose:
+    `mkdir -p ./dags ./logs ./plugins` | `echo -e "AIRFLOW_UID=$(id -u)" > .env`;
+6. Em todos os sistemas operacionais , você precisa executar migrações de banco de dados e criar a primeira conta de usuário. Para fazer isso, execute:
+`docker-compose up airflow-init`;
+7. Inicie todos os serviços: `docker-compose up -d`;
+![Instalação Airflow Terminal](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow1.png)
+8. Acesse o servidor web do Airflow disponível em: http://localhost:8080. A conta padrão possui o login **airflowe** a senha **airflow**.
+![Acesso ao Apache Airflow](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow2.png)
     
 ------
 ## 📝 Tarefas em aberto

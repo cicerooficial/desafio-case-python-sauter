@@ -1,7 +1,8 @@
 '''
   Tarefa 3 Projeto: Desafio: Capturar dados de Loja de Aplicativo - Google Play
   Autor: Cícero Henrique dos Santos
-  Descrição: Criar objeto com operações de captura de dados, com atualização da tabela. O objetivo aqui é criar um pipeline simplificado de dados para o banco, de forma que a tabela seja sempre atualizada com as últimas informações de reviews. 
+  Descrição: Criar objeto com operações de captura de dados, com atualização da tabela. 
+  O objetivo aqui é criar um pipeline simplificado de dados para o banco, de forma que a tabela seja sempre atualizada com as últimas informações de reviews. 
 
 '''
 
@@ -30,15 +31,15 @@ python3 -m pip freeze > requirements.txt
 python3 -m pip install -r requirements.txt
 
 '''
-
-from google.cloud import client, storage
-from google.oauth2 import service_account
-import pandas as pd
+from    google.cloud           import   client, storage     # Importa métodos de acesso ao Google Cloud Storage
+from    google.oauth2          import   service_account     # Importa métodos de autenticação da conta de serviço do Google Cloud
+from    google_play_scraper    import   Sort, reviews_all   # Importa métodos Sort e reviews para buscar avaliações do aplicativo pela biblioteca google_play_scraper
+import  pandas                 as       pd                  # Importa biblioteca pandas para analise de dados
 
 my_bucket_name  = 'bigquery-gcp-scrapper'
 my_project      = 'bigquery-google-play-scrapper'
 my_project_id   = 'nifty-foundry-336623'
-SCOPE = ["https://www.googleapis.com/auth/cloud-platform"]
+SCOPE           = ["https://www.googleapis.com/auth/cloud-platform"]
 
 
 class etl_with_gcp():
@@ -52,8 +53,71 @@ class etl_with_gcp():
     
     def scraper_google_play(self):
         try:
-            # Ajustar código da tarefa 1 para capturar os dados e jogar no Cloud Storage
+            app_id = 'com.amazon.dee.app'         # Armazena o ID do App   
+            resultado_revisao = []                # Criar lista para armazenar os resultados capturados
+
+            # Criando uma lista com os resultados das análises do app rastreados 
+            for pontuacao in list(range(1, 6)):   # Laço para percorrer as avaliações por nível de classificação de 1 a 5
+                resultado = reviews_all(
+                    app_id,                         # Busca os dados do app Alexa
+                    sleep_milliseconds=0,           # Define limite em 0 milisegundos para rastrear
+                    lang='pt',                      # Define linguagem como família português
+                    country='br',                   # Define a região de origem como Brasil
+                    sort=Sort.RATING,               # Pesquisa por avaliação (RATING)
+                    filter_score_with = pontuacao,  # Definindo o filtro de acordo com a potuação atual do for 
+            )
+            resultado_revisao.extend(resultado) # Salva cada captura dentro da última posição da lista
+
+            df_alexa = pd.DataFrame(resultado_revisao)  # Salvando a lista de resultado em um DataFrame com pandas
+            
             print('Sucesso! Captura de dados realizada')
+            
+            # Filtrando colunas selecionadas com o método filter
+            df_alexa = df_alexa.filter(['content', 'score',	'thumbsUpCount', 'reviewCreatedVersion', 'at'])
+
+            df_aval_positiva    = df_alexa.loc[df_alexa['score'] >= 4] # Classificação positiva (maior ou igual a 4)
+            df_aval_neutra      = df_alexa.loc[df_alexa['score'] == 3] # Classificação neutra (Igual a 3)
+            df_aval_negativa    = df_alexa.loc[df_alexa['score'] < 3]  # Classificação negativa (Menor que 3)
+
+            # Salvar classificação positiva em arquivo CSV
+            df_aval_positiva.to_csv('aval_positiva.csv',  # Definie o nome do arquivo
+                                    encoding='utf-8',         # Definie a codificação para utf-8
+                                    index=False,          # Define a retirada do index
+                                    sep=';',              # Define o separador como ';'
+                                    header=True           # Define salvar como cabeçalho
+            )
+            # Salvar classificação neutra em arquivo CSV
+            df_aval_neutra.to_csv('aval_neutra.csv',   # Definie o nome do arquivo
+                                encoding='utf-8',  # Definie a codificação para utf-8
+                                index=False,       # Define a retirada do index
+                                sep=';',           # Define o separador como ';'
+                                header=True        # Define salvar como cabeçalho
+            )
+            # Salvar classificação neutra em arquivo CSV
+            df_aval_negativa.to_csv('aval_negativa.csv',  # Definie o nome do arquivo
+                                encoding='utf-8',     # Definie a codificação para utf-8
+                                index=False,          # Define a retirada do index
+                                sep=';',              # Define o separador como ';'
+                                header=True           # Define salvar como cabeçalho
+            )
+            
+            print('Sucesso! Arquivos CSVs salvos')
+            
+            # Envio de arquivos para o Google Cloud Storage
+            bucket = self.client.bucket(my_bucket_name)                 # Define o nome do Bucket
+            blob = bucket.blob('aval_positiva.csv')                     # Define o local onde o arquivo será armazenado
+            blob.upload_from_filename('aval_positiva.csv')              # Define o nome que o arquivo será armazenado
+
+            bucket = self.client.bucket(my_bucket_name)                 # Define o nome do Bucket
+            blob = bucket.blob('aval_neutra.csv')                       # Define o local onde o arquivo será armazenado
+            blob.upload_from_filename('aval_neutra.csv')                # Define o nome que o arquivo será armazenado
+
+            bucket = self.client.bucket(my_bucket_name)                 # Define o nome do Bucket
+            blob = bucket.blob('aval_negativa.csv')                     # Define o local onde o arquivo será armazenado
+            blob.upload_from_filename('aval_negativa.csv')              # Define o nome que o arquivo será armazenado
+            
+            print('Sucesso! Arquivos enviados para o Google Cloud Storage')
+
         except:
             print('Erro! Não foi possível realizar a captura de dados')
 
@@ -61,14 +125,14 @@ class etl_with_gcp():
     def download_files_csv_cloud_storage(self):
 
         try:
-            bucket = self.client.bucket(my_bucket_name)
-            blobs = self.client.list_blobs(my_bucket_name)                                # Armazenar arquivos em uma lista     
+            bucket = self.client.bucket(my_bucket_name)                             # Define o nome do Bucket
+            blobs = self.client.list_blobs(my_bucket_name)                          # Armazenar arquivos em uma lista passando o nome do bucket de onde estão os arquivos
             
             # Laço para percorrer cada elemento de dentro do bucket
             for object in blobs:
-                arquivo = bucket.blob(object.name)          # Captura o nome do arquivo de acordo com a posição do laço
-                arquivo.download_to_filename(object.name)   # Salva o arquivo com o mesmo nome
-                print(arquivo)
+                arquivo = bucket.blob(object.name)                                  # Captura o nome do arquivo de acordo com a posição do laço
+                arquivo.download_to_filename(object.name)                           # Salva o arquivo com o mesmo nome
+                print(arquivo)                                                      # Imprime o nome do arquivo que foi realizado o download a cada laço
             print('Sucesso! Download de arquivos CSV completados')
         except:
             print('Erro! Download imcompleto, algo deu errado.')
@@ -77,38 +141,40 @@ class etl_with_gcp():
     def upload_dataframe_to_bigquery(self):
 
         #Lê os arquivos CSVs e armazena os dados em um DataFrame
-        df_aval_positiva    = pd.read_csv('aval_positiva.csv', sep=';')
-        df_aval_neutra      = pd.read_csv('aval_neutra.csv', sep=';')
-        df_aval_negativa    = pd.read_csv('aval_negativa.csv', sep=';')
+        df_aval_positiva    = pd.read_csv('aval_positiva.csv',  sep=';')             # Armazena os dados do CSV aval_positiva.csv no DataFrame df_aval_positiva
+        df_aval_neutra      = pd.read_csv('aval_neutra.csv',    sep=';')             # Armazena os dados do CSV aval_neutra.csv no DataFrame df_aval_neutra
+        df_aval_negativa    = pd.read_csv('aval_negativa.csv',  sep=';')             # Armazena os dados do CSV aval_negativa.csv no DataFrame df_aval_negativa
 
         try: 
             # Carregar DataFrames para tabela dentro do Datawarehouse(Bigquery)
             df_aval_positiva.to_gbq(
-                destination_table='avaliacao_positiva.avaliacao_positiva', 
-                project_id=my_project_id, 
-                if_exists='replace', 
-                credentials=self.my_credential)
+                destination_table   =   'avaliacoes.avaliacao_positiva',    # Define o caminho da tabela de destino criada no BigQuery = NomeConjuntodeDados.nomedaTabela
+                project_id          =   my_project_id,                              # Define o nome do ID do projeto 
+                if_exists           =   'replace',                                  # Substitui a tabela caso já exista, a fim de evitar dados duplicados na mesma tabela 
+                credentials         =   self.my_credential                          # Define a credencial de serviço de acesso 
+            )                         
             print('Sucesso! df_aval_positiva enviado para o BigQuery')
 
             df_aval_neutra.to_gbq(
-                destination_table='avaliacao_neutra.avaliacao_neutra', 
-                project_id=my_project_id, 
-                if_exists='replace', 
-                credentials=self.my_credential)
+                destination_table   =   'avaliacoes.avaliacao_neutra',        # Define o caminho da tabela de destino criada no BigQuery = NomeConjuntodeDados.nomedaTabela
+                project_id          =   my_project_id,                              # Define o nome do ID do projeto 
+                if_exists           =   'replace',                                  # Substitui a tabela caso já exista, a fim de evitar dados duplicados na mesma tabela
+                credentials         =   self.my_credential                          # Define a credencial de serviço de acesso 
+            )
             print('Sucesso! df_aval_neutra enviado para o BigQuery')
 
             df_aval_negativa.to_gbq(
-                destination_table='avaliacao_negativa.avaliacao_negativa', 
-                project_id=my_project_id, 
-                if_exists='replace', 
-                credentials=self.my_credential)
+                destination_table   =   'avaliacoes.avaliacao_negativa',    # Define o caminho da tabela de destino criada no BigQuery = NomeConjuntodeDados.nomedaTabela
+                project_id          =   my_project_id,                              # Define o nome do ID do projeto 
+                if_exists           =   'replace',                                  # Substitui a tabela caso já exista, a fim de evitar dados duplicados na mesma tabela
+                credentials         =   self.my_credential                          # Define a credencial de serviço de acesso 
+            )
             print('Sucesso! df_aval_negativa enviado para o BigQuery')
         except:
             print('Erro! Não foi possível enviar arquivos para o BigQuery')
 
-
-
-if __name__ == "__main__":
+# Testar funções separadamente
+#if __name__ == "__main__":
     #etl_with_gcp().scraper_google_play()
-    etl_with_gcp().download_files_csv_cloud_storage()
-    etl_with_gcp().upload_dataframe_to_bigquery()
+    #etl_with_gcp().download_files_csv_cloud_storage()
+    #etl_with_gcp().upload_dataframe_to_bigquery()

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "nifty-foundry-336623",
+  "private_key_id": "dad5e810d66e682e6a6d70fa049cd9034e234e12",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDIQz46HRz+AuoK\n04Ks/VCKFqLfwvEDSnM78cuiPGsMrTm9POTG9DU79u65b53Lv7nBXVWjRfVPnRfD\nj5zg6XVjt5nqLbBPvycoUrYD6wzqJ858hFMe2AuR0CyscAAvK4hcMm8uf6bkSHoz\nesDF9nxHaIXcGibCYEN7oljWTsdmi4GXyDU7oeTR/qeJF9pGTvUqWTetqhUlPbdm\nh+Up0bn60Y3G8ZE7p3u5a0ziJMVyEjAs6kf8DNl+8Ol87wXje3xQnOXl2K72BfF5\nX+IMOTwrYok32mFQg4dXWqud2mceThTwfHbpIOKwcXqtg1I2r+qkBdcOjzXmrjf8\nmmlvx9hrAgMBAAECggEAGIHCF7KAXcVVhsWjdC/7rypd/CwK+nAd8fQBC3WBVCfO\nrQ3KoV45NYFebWrvUIPB45vcYwKopnl+8vucIxnut6k8OKAmt1uZGyIkDA6zoeQF\nLM+0rE2b/NgQ33lFTIBzS3UQjgwpDD6iVbJr7M3hH4v29ZxtqdPF7ldLr84sMKwi\nEI0v33Dv4YCBvtwPcDs5m4f90FWT3HE3M51BrtK935GJPqDpFzsaqqX5gUC+vKcN\n1YjJ0B+/DpRRtuyVks/6x0tHEoPIZrD3N1RwEX7jZO+ikh/2ytLtP6bDkCPUKTXA\n4GRsrPWxZBm+gLT0y8s8/43IMj19l2TrLRE4wEBaYQKBgQD72WD8N+eIvmQCo5TV\n4c17scezfuEtYZOuucF/zcUXOq3EH3b6kqzvrzfHistr2nhQ6Byg2U7XbPrXEzHF\nHjOgyZJBL1syJWoniGPhDDIUp6K9b60UJRZ1L6rVGnCXrqrpTv6nklXsQfWPAJ+o\n5KnBidsSgE1sdSIBAMoqcIp4xQKBgQDLkDTnJq/Ip7OQ3vFCkFfKtzVqYX5VYK1d\nba+gmdVT5dMRRyOE6G4Jny8swWFEOZIhxYyvJoXazER1Y8rmIvLmJfBEAFOD4tLC\nJLTG+KfgRjzwXsJnQVUQimI7q+hVFbBh9FCTqvyOL9IFpNzYqoF5lGWCSeTXNG+o\n8G/qrkE/bwKBgQDqTnc4sBos0lThT6csxYMSzXdpu2VrfxiSuicX7CytS95WVJ+w\nx7000OMoNizDDuJZA1l/HC2Jps5IQodPSKXntSDonFJP+Rcl6HJj8aC2Lq/tZnS0\nBT07kTlyQcL2m35OyTuKU061GziF7qKb0wFMGiFCuTNO8DrOjBmKGmH5sQKBgAbq\n0JFmRCTqZfSvTr13UDRoQ11pELTwAxQgrQ4lDBW8wo5cv309tLeI/D5mF9sMpcWW\nA/DTu0qzFER07qkhWOWvNlnpNO1PYOAOBUKZooLBgEKexbZihvR371ydu9hgU00Q\n00ghUFG4mEdu0b5fFOU/wK9LuYYClyTDftoXr8nrAoGAGAI4kp+HVlD7UNsk905p\ntlLk/nPqRLJnfgGH4OfLJ6qC7XpLXZCFadOKsHo636X8DYUTj8JO/1C+7+VgWRpI\nta65EpSdnG3ruvjmXlCv8DM09uIy+x0nj21Fnlk4MOYCedwddWetANFu7wZwTiCT\n5ZAXUQVM6vyjgWHvpq0Qiww=\n-----END PRIVATE KEY-----\n",
+  "client_email": "bigquery-google-play-scraper-s@nifty-foundry-336623.iam.gserviceaccount.com",
+  "client_id": "113994608281440504448",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bigquery-google-play-scraper-s%40nifty-foundry-336623.iam.gserviceaccount.com"
+}

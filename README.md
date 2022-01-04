@@ -220,10 +220,10 @@ Com o desenvolvido do projeto foi possível obter maiores conhecimentos de libs 
 
 Por fim, o desafio foi uma ótima oportunidade de auto desafio, confiança em desenvolver um projeto "real" utilizando tantas stacks diferentes e construção de um projeto que servirá também como portifólio.
   
-    Aprendizados:
+Aprendizados:
 
-    A maior dificuldade foi em tentar resolver o erro de *módulo google-play-scraper* não identificado no Apache Airflow. 
-    
-    Busquei desenvolver o pipeline completo seguindo o script etl_with_gcp_and_airflow.py, mas, devido o Apache Airflow ainda não possuir dentro de seu repositório de providers do Google suporte ao módulo do google-play-scrapper (conforme a documentação [Módulos de providers do google disponíveis](https://airflow.apache.org/docs/apache-airflow-providers-google/stable/_modules/index.html)), não foi possível realizar o pipeline com a função de capturar os dados, somente as funções de download dos CSVs do Cloud Storage e envio ao Big Query foi possível realizar (Conforme solicitado no objetivo de tarefa 3).
-    
-    Caso deseje executar o script completo, descomente as últimas linhas do arquivo da função main, execute os comandos para evitar erros de dependências ao executar o script.
+A maior dificuldade foi em tentar resolver o erro de *módulo google-play-scraper* não identificado no Apache Airflow. 
+
+Busquei desenvolver o pipeline completo seguindo o script etl_with_gcp_and_airflow.py, mas, devido o Apache Airflow ainda não possuir dentro de seu repositório de providers do Google suporte ao módulo do google-play-scrapper (conforme a documentação [Módulos de providers do google disponíveis](https://airflow.apache.org/docs/apache-airflow-providers-google/stable/_modules/index.html)), não foi possível realizar o pipeline com a função de capturar os dados, somente as funções de download dos CSVs do Cloud Storage e envio ao Big Query foi possível realizar (Conforme solicitado no objetivo de tarefa 3).
+
+Caso deseje executar o script completo, descomente as últimas linhas do arquivo da função main, execute os comandos para evitar erros de dependências ao executar o script.

@@ -171,7 +171,7 @@ class etl_with_gcp():
 '''
 
 # Testar funções separadamente
-if __name__ == "__main__":
+#if __name__ == "__main__":
     #etl_with_gcp().scraper_google_play()
     #etl_with_gcp().download_files_csv_cloud_storage()
     #etl_with_gcp().upload_dataframe_to_bigquery()

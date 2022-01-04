@@ -113,7 +113,7 @@ Para a Tarefa 3, configure o docker em sua máquina (no caso utilizei Windows) s
 5. Instale o Docker Desktop no Windows: [Docker Desktop](https://hub.docker.com/editions/community/docker-ce-desktop-windows);
     - Obs: Abra o Docker Desktop e verifique se estão habilitados o "Enable integration with my default WSL distro" e "Ubuntu-20.04" em Settings->Resource->WSL Integration.
 
-#### Instalação do Apache Airflow no Docker
+### Instalação do Apache Airflow no Docker
 - Documentação - [Executando o Airflow no Docker](https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html)
 - Abra o terminal do WSL2 e crie um diretório para o projeto no ***home/<seu-diretório>*** com o comando: `mkdir apache-airflow`;
 - Acesse o diretório `cd apache-airflow`;
@@ -145,27 +145,23 @@ Para a Tarefa 3, configure o docker em sua máquina (no caso utilizei Windows) s
 
 - Tarefa 3 - Criar Pipeline de dados
     1. Transfira os arquivos do pipeline da [Pasta dags](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/dags) para a pasta dags do Airflow (esta pasta foi criada no momento da instalação juntamente com as pastas logs e plugins no último passo do tópico **Instalação do Apache Airflow no Docker**). Utilize o comando `cp /mnt/c/Users/<caminho onde até a pasta desafio-case-python-sauter>/dags /home/<seu diretório>/apache airflow/`;
-    1. Acesso o arquivo etl_with_gcp_and_airflow.py dentro da pasta dags/etl_with_gcp_and_airflow. Dentro do arquivo, na funçao `def __init__(self)` comente as linhas com o caminho para teste WINDOWS e descomente as linhas de teste para LINUX
-    1. A fim de evitar conflitos por falta de dependências, execute o arquivo shell dentro da pasta ***\dags\etl_with_gcp_and_airflow***: 
+    2. Acesso o arquivo etl_with_gcp_and_airflow.py dentro da pasta dags/etl_with_gcp_and_airflow. Dentro do arquivo, na funçao `def __init__(self)` comente as linhas com o caminho para teste WINDOWS e descomente as linhas de teste para LINUX. 
+    3. A fim de evitar conflitos por falta de dependências, execute o arquivo shell dentro da pasta ***\dags\etl_with_gcp_and_airflow***: 
         - Dentro da pasta mencionada, acesso o arquivo através do de um editor de texto de sua oreferência (no caso utilizei o NANO). Através do comando `nano pip_install_requirements.sh` desabilite os comentários de acordo com seu sistema operacional. Salve com o comando `CTRL + O` e depois feche o editor de texto com o comando `CTRL + X`;
         ![Instalação pip e requirements.txt](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/instalacao_pip_requirements.png)
         - Agora (no WSL/Linux) execute o script através do comando `sh pip_install_requirements.sh`.
-    1. Crie uma conta se serviço para autenticação de acesso ao Google Cloud seguindo os passos através do link: [Como criar uma conta de serviço](https://cloud.google.com/docs/authentication/getting-started#creating_a_service_account) e salve o arquivo dentro da pasta \dags\etl_with_gcp_and_airflow;
-    1. Com as configurações necessárias realizadas, (caso não esteja com o Apache Airflow iniciado) execute o comando `docker-compose up -d` dentro do diretório onde o arquivo se encontra: ***/home/<seu diretório>/apache airflow***;
-    1. Acesse o servidor web do Apache Airflow disponível em: http://localhost:8080. A conta padrão possui o login **airflow** e a senha **airflow**;
-    1. Dentro do Apache Airflow, na aba DAGs, procure pelo DAG **pipeline_etl_with_gcp_and_airflow** e execute para certificar que tudo está funcionando corretamente. Por padrão as sinalizações de execução devem conter o status com a cor verde, indicando  **sucess** na execução.
+    4. Crie uma conta se serviço para autenticação de acesso ao Google Cloud seguindo os passos através do link: [Como criar uma conta de serviço](https://cloud.google.com/docs/authentication/getting-started#creating_a_service_account) e salve o arquivo dentro da pasta \dags\etl_with_gcp_and_airflow;
+    5. Com as configurações necessárias realizadas, (caso não esteja com o Apache Airflow iniciado) execute o comando `docker-compose up -d` dentro do diretório onde o arquivo se encontra: ***/home/<seu diretório>/apache airflow***;
+    6. Acesse o servidor web do Apache Airflow disponível em: http://localhost:8080. A conta padrão possui o login **airflow** e a senha **airflow**;
+    7. Dentro do Apache Airflow, na aba DAGs, procure pelo DAG **pipeline_etl_with_gcp_and_airflow** e execute para certificar que tudo está funcionando corretamente. Por padrão as sinalizações de execução devem conter o status com a cor verde, indicando  **sucess** na execução.
         - Abaixo segue os prints de demonstração das Dags com status de Sucess: 
         - Pipeline completo no Airflow:
         ![Painel Pipeline OK 1 ](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/pipeline_ok_2.png)
         ![Painel Pipeline OK 2](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/pipeline_ok.png)        
-    
+    Obs.: O arquivo script_etl_with_gcp_and_airflow.py realizará todas as funções de ETL. Obs.: Atentar em realizar o passo 2, antes da execução.
 
 ------
-## 📝 Tarefas em aberto
 
-⬜ 1. Criar exemplo de Deploy do pipeline via Airflow.
-
-------
 ## 🗃 Linguagens, dependencias e libs utilizadas
 
 |Lang/Lib/Framwork             |Version          |

@@ -7,7 +7,7 @@
 # Desafio Sauter: Capturar dados de Loja de Aplicativo - Google Play
 
 <p align="center">
-    <img src="https://img.shields.io/static/v1?label=STATUS&message=EM%20CONCLUÍDO&color=RED&style=for-the-badge"/>
+    <img src="https://img.shields.io/static/v1?label=STATUS&message=CONCLUÍDO&color=RED&style=for-the-badge"/>
     <img src="https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&color=525252"/>
     <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
     <img src="https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white"/>

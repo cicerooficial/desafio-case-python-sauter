@@ -24,13 +24,14 @@
 ------
 
 ## 📌 Tópicos:
-- [Descrição do projeto](#descrição-do-projeto)
-- [Objetivos](#objetivos)
-- [Pré-requisitos](#pré-requisitos)
-- [Como rodar a aplicação](#como-rodar-a-aplicação)
-- [Tarefas em aberto](#tarefas-em-aberto)
-- [Linguagens, dependencias e libs utilizadas](#linguagens-dependencias-e-libs-utilizadas)
-- [Referências](#referências)
+- [Descrição do projeto](https://github.com/cicerooficial/desafio-case-python-sauter#descri%C3%A7%C3%A3o-do-projeto)
+- [Objetivos](https://github.com/cicerooficial/desafio-case-python-sauter#descri%C3%A7%C3%A3o-do-projeto)
+- [Pré-requisitos](https://github.com/cicerooficial/desafio-case-python-sauter#descri%C3%A7%C3%A3o-do-projeto)
+- [Como rodar a aplicação](https://github.com/cicerooficial/desafio-case-python-sauter#descri%C3%A7%C3%A3o-do-projeto)
+- [Tarefas em aberto](https://github.com/cicerooficial/desafio-case-python-sauter#descri%C3%A7%C3%A3o-do-projeto)
+- [Linguagens, dependencias e libs utilizadas](https://github.com/cicerooficial/desafio-case-python-sauter#descri%C3%A7%C3%A3o-do-projeto)
+- [Referências](https://github.com/cicerooficial/desafio-case-python-sauter#descri%C3%A7%C3%A3o-do-projeto)
+- [Conclusão](https://github.com/cicerooficial/desafio-case-python-sauter#descri%C3%A7%C3%A3o-do-projeto)
 
 ------
 

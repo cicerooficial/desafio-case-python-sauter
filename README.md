@@ -147,7 +147,7 @@ Para a Tarefa 3, configure o docker em sua máquina (no caso utilizei Windows) s
     1. Acesso o arquivo etl_with_gcp_and_airflow.py dentro da pasta dags/etl_with_gcp_and_airflow. Dentro do arquivo, na funçao `def __init__(self)` comente as linhas com o caminho para teste WINDOWS e descomente as linhas de teste para LINUX
     1. A fim de evitar conflitos por falta de dependências, execute o arquivo shell dentro da pasta ***\dags\etl_with_gcp_and_airflow***: 
         - Dentro da pasta mencionada, acesso o arquivo através do de um editor de texto de sua oreferência (no caso utilizei o NANO). Através do comando `nano pip_install_requirements.sh` desabilite os comentários de acordo com seu sistema operacional. Salve com o comando `CTRL + O` e depois feche o editor de texto com o comando `CTRL + X`;
-        ![Instalação pip e requirements.txt]()
+        ![Instalação pip e requirements.txt](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/instalacao_pip_requirements.png)
         - Agora (no WSL/Linux) execute o script através do comando `sh pip_install_requirements.sh`.
     1. Crie uma conta se serviço para autenticação de acesso ao Google Cloud seguindo os passos através do link: [Como criar uma conta de serviço](https://cloud.google.com/docs/authentication/getting-started#creating_a_service_account) e salve o arquivo dentro da pasta \dags\etl_with_gcp_and_airflow;
     1. Com as configurações necessárias realizadas, (caso não esteja com o Apache Airflow iniciado) execute o comando `docker-compose up -d` dentro do diretório onde o arquivo se encontra: ***/home/<seu diretório>/apache airflow***;

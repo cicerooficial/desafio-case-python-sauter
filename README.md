@@ -78,20 +78,28 @@ Finalmente, salvar o resultado do profile em formato .html.
 
 ## ❗ Pré-requisitos
 
-Para a Tarefa 3, configure o docker em sua máquina seguindo os passos abaixo:
+### Tarefa 1
+ Para realização da Tarefa 1 utilize alguma plataforma notebook de sua preferência.
 
-## Configurando o Docker em sua máquina:
+Exemplo: 
+[Google Colab](https://colab.research.google.com/?hl=pt-BR&skip_cache=false%22)
+[Jupiter Notebook](https://mybinder.org/v2/gh/jupyterlab/jupyterlab-demo/HEAD?urlpath=lab/tree/demo)
 
-A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um passo a passo de preparação de ambiente.
+Entre outros...
 
-### Download Docker e Docker Compose:
+### Tarefa 2
+Para realização da Tarefa 2 é possível realizar de forma manual pela plataforma do [Google CLoud Platform](https://cloud.google.com/free) ou através de comandos no próprio Google Colab ou Jupiter Notebook. 
 
-### Download Docker - Windows
+### Tarefa 3
+Para a Tarefa 3, configure o docker em sua máquina (no caso utilizei Windows) seguindo os passos abaixo:
 
-- [Docker](https://docs.docker.com/get-docker/)
-- [Docker Compose](https://docs.docker.com/compose/install/)
+### Configurando o Docker em sua máquina:
 
-### Instalação Docker - Windows
+#### Download Docker: [Docker](https://docs.docker.com/get-docker/)
+#### Download Docker Compose: [Docker Compose](https://docs.docker.com/compose/install/)
+
+
+#### Instalação Docker - Windows
 
 1. Verificar se o Windows está atualizado. Caso seja inferiro a 18362, clique no link ao lado para atualizar o Windows 10. [Atualizar o Windows](https://www.microsoft.com/pt-br/software-download/windows10);
 2. Pesquise por Ativar ou desativar recursos do Windows e siga os passos abaixo:
@@ -104,13 +112,20 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
 5. Instale o Docker Desktop no Windows: [Docker Desktop](https://hub.docker.com/editions/community/docker-ce-desktop-windows);
     - Obs: Abra o Docker Desktop e verifique se estão habilitados o "Enable integration with my default WSL distro" e "Ubuntu-20.04" em Settings->Resource->WSL Integration.
 
-### Instalação Docker - Linux
-
-- [Link para instalação do Docker Engine](https://docs.docker.com/engine/install/)
-- [Link para instalação do Docker Compose](https://docs.docker.com/compose/install/)
-
-### Instalação Docker - Mac
-- [Link para instalação do Docker Desktop no Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac/)
+#### Instalação do Apache Airflow no Docker
+- Documentação - [Executando o Airflow no Docker](https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html)
+- Abra o terminal do WSL2 e crie um diretório para o projeto no ***home/<seu-diretório>*** com o comando: `mkdir apache-airflow`;
+- Acesse o diretório `cd apache-airflow`;
+- No diretório apache-airflow, baixe o arquivo `docker-compose.yaml` disponibilizado na documentação oficial através do comando: `curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.2.3/docker-compose.yaml'`;
+- Confirme se o arquivo foi baixado com o comando de listar: `ls`;
+- No Linux , o início rápido precisa saber a id do usuário do host e precisa ter a id do grupo definida como 0. Caso contrário, os arquivos criados no dags, logs e plugins serão criados com usuário root. Você deve certificar-se de configurá-los para o docker-compose:
+    `mkdir -p ./dags ./logs ./plugins` | `echo -e "AIRFLOW_UID=$(id -u)" > .env`;
+- Em todos os sistemas operacionais, você precisa executar migrações de banco de dados e criar a primeira conta de usuário. Para fazer isso, execute:
+`docker-compose up airflow-init`;
+- Inicie todos os serviços através do comando: `docker-compose up -d`;
+![Instalação Airflow Terminal](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow1.png)
+- Acesse o servidor web do Apache Airflow disponível em: http://localhost:8080. A conta padrão possui o login **airflow** e a senha **airflow**.
+![Acesso ao Apache Airflow](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow2.png)
 
 ------
 
@@ -120,67 +135,54 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
     1. Acessar o Google Colab: https://colab.research.google.com/drive/1ak9TAlvzWBj5Hh39swM8iG-uF1dVaDe6?usp=sharing;
     2. Acessar diretamente o arquivo no diretório: 
     [Google Colab - Capturando dados com Google-Play-Scraper](https://github.com/cicerooficial/desafio-case-python-sauter/blob/main/google_play_scraper_alexa.ipynb)
-    - [Pasta com arquivos CSV](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/csv)
-    - [Pasta com reports em html](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/reports)
+    - [Pasta com arquivos CSV](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/csv);
+    - [Pasta com reports em html](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/reports).
     
 - Tarefa 2 - Subir as tabelas para um BD
-    1. Acesse o arquivo com o passo: [Armazenar dados no BigQuery](https://github.com/cicerooficial/desafio-case-python-sauter/blob/main/Armazenar_dados_no_BigQuery.md)
+    1. Acesse o arquivo com o passo a passo manual: [Armazenar dados no BigQuery](https://github.com/cicerooficial/desafio-case-python-sauter/blob/main/Armazenar_dados_no_BigQuery.md);
+    2. Siga os passos dentro do Google Colab [Google Colab - Capturando dados com Google-Play-Scraper](https://github.com/cicerooficial/desafio-case-python-sauter/blob/main/google_play_scraper_alexa.ipynb) no tópico **Enviar dados CSV para bucket no Cloud Storage e Big Query**.
 
 - Tarefa 3 - Criar Pipeline de dados
-    1. Acesse a pasta dags para mais informações sobre o desenvolvimento da tarefa 3 e arquivos: [Pasta dags](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/dags)
-
-![Painel Pipeline OK 1 ](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/pipeline_ok_2.png)
-![Painel Pipeline OK 2](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/pipeline_ok.png)
-
-1. Abra o terminal do WSL2 e crie um diretório para o projeto no `~$/home/<seu-nome>` com o comando: `mkdir apache-airflow`;
-2. Acesse o diretório `cd apache-airflow`;
-3. No diretório apache-airflow, baixe o arquivo `docker-compose.yaml` disponibilizado na documentação oficial: `curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.2.3/docker-compose.yaml'`;
-4. Confirme se o arquivo foi baixado com o comando de listar: `ls`;
-5. No Linux , o início rápido precisa saber a id do usuário do host e precisa ter a id do grupo definida como 0. Caso contrário, os arquivos criados no dags, logse pluginsserá criado com rootusuário. Você deve certificar-se de configurá-los para o docker-compose:
-    `mkdir -p ./dags ./logs ./plugins` | `echo -e "AIRFLOW_UID=$(id -u)" > .env`;
-6. Em todos os sistemas operacionais , você precisa executar migrações de banco de dados e criar a primeira conta de usuário. Para fazer isso, execute:
-`docker-compose up airflow-init`;
-7. Inicie todos os serviços: `docker-compose up -d`;
-![Instalação Airflow Terminal](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow1.png)
-8. Acesse o servidor web do Airflow disponível em: http://localhost:8080. A conta padrão possui o login **airflowe** a senha **airflow**.
-![Acesso ao Apache Airflow](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/airflow2.png)
+    1. Transfira os arquivos do pipeline da [Pasta dags](https://github.com/cicerooficial/desafio-case-python-sauter/tree/main/dags) para a pasta dags do Airflow (esta pasta foi criada no momento da instalação juntamente com as pastas logs e plugins no último passo do tópico **Instalação do Apache Airflow no Docker**). Utilize o comando `cp /mnt/c/Users/<caminho onde até a pasta desafio-case-python-sauter>/dags /home/<seu diretório>/apache airflow/`;
+    1. Acesso o arquivo etl_with_gcp_and_airflow.py dentro da pasta dags/etl_with_gcp_and_airflow. Dentro do arquivo, na funçao `def __init__(self)` comente as linhas com o caminho para teste WINDOWS e descomente as linhas de teste para LINUX
+    1. A fim de evitar conflitos por falta de dependências, execute o arquivo shell dentro da pasta ***\dags\etl_with_gcp_and_airflow***: 
+        - Dentro da pasta mencionada, acesso o arquivo através do de um editor de texto de sua oreferência (no caso utilizei o NANO). Através do comando `nano pip_install_requirements.sh` desabilite os comentários de acordo com seu sistema operacional. Salve com o comando `CTRL + O` e depois feche o editor de texto com o comando `CTRL + X`;
+        ![Instalação pip e requirements.txt]()
+        - Agora (no WSL/Linux) execute o script através do comando `sh pip_install_requirements.sh`.
+    1. Crie uma conta se serviço para autenticação de acesso ao Google Cloud seguindo os passos através do link: [Como criar uma conta de serviço](https://cloud.google.com/docs/authentication/getting-started#creating_a_service_account) e salve o arquivo dentro da pasta \dags\etl_with_gcp_and_airflow;
+    1. Com as configurações necessárias realizadas, (caso não esteja com o Apache Airflow iniciado) execute o comando `docker-compose up -d` dentro do diretório onde o arquivo se encontra: ***/home/<seu diretório>/apache airflow***;
+    1. Acesse o servidor web do Apache Airflow disponível em: http://localhost:8080. A conta padrão possui o login **airflow** e a senha **airflow**;
+    1. Dentro do Apache Airflow, na aba DAGs, procure pelo DAG **pipeline_etl_with_gcp_and_airflow** e execute para certificar que tudo está funcionando corretamente. Por padrão as sinalizações de execução devem conter o status com a cor verde, indicando  **sucess** na execução.
+        - Abaixo segue os prints de demonstração das Dags com status de Sucess: 
+        - Pipeline completo no Airflow:
+        ![Painel Pipeline OK 1 ](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/pipeline_ok_2.png)
+        ![Painel Pipeline OK 2](https://raw.githubusercontent.com/cicerooficial/desafio-case-python-sauter/main/img/pipeline_ok.png)        
     
+
 ------
 ## 📝 Tarefas em aberto
 
-✅ 1. No Google Colab, enviar dados CSV para o BigQuery via Python; 
-
-✅ 2. Criar função Python para:
-    - Extrair dados do app no Google Play;
-    - Enviar dados para o Google Cloud Storage;
-    - Baixar CSVs do Cloud Storage e tranformar em Dataframe
-    - Caregar datafranmes em uma tabela no DataWarehouse(BigQuery).
-
-✅ 3. Criar pipeline da função acima via Airflow através de DAGs.
-
-⬜ 4. Criar exemplo de Deploy do pipeline via Airflow.
-
-⬜ 5. Corrigir erro de dependencia google-play-scraper da função scraper_google_play(self) para realizar ETL completo;
+⬜ 1. Criar exemplo de Deploy do pipeline via Airflow.
 
 ------
 ## 🗃 Linguagens, dependencias e libs utilizadas
 
 |Lang/Lib/Framwork             |Version          |
 |------------------------------|-----------------|
-|Python                        |3.8              |
-|google-play-scraper           |v1.0.2           |
-|pandas                        |v1.3.5           |
-|pandas-profiling              |v3.1.0           |
-|pandas_gbq                    |v0.15.0          |
-|Docker                        |v4.3.2           |
-|Docker Compose                |v1.29.2          |
-|Apache Airflow                |v2.0.2           |
-|google-cloud-storage          |v1.43.0          |
-|pip                           |v21.3.1          |
-|Google Colab                  |                 |
+|Python                        |3.10             |
+|google-play-scraper           |1.0.2            |
+|pandas                        |1.3.5            |
+|pandas-profiling              |3.1.0            |
+|pandas_gbq                    |0.15.0           |
+|Docker                        |4.3.2            |
+|Docker Compose                |1.29.2           |
+|Apache Airflow                |2.0.2            |
+|google-cloud-storage          |1.43.0           |
+|pip                           |21.3.1           |
 |Google Cloud Storage (GCS)    |                 |
 |Google BigQuery (GBQ)         |                 |
-
+|Google Colab                  |                 |
+|Visual Studio Code            |                 |
 
 ------
 ## 📚 Referências
@@ -192,8 +194,8 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
 - [Como criar buckets de armazenamento](https://cloud.google.com/storage/docs/creating-buckets#storage-create-bucket-gsutil)
 - [Como criar um conjunto de dados](https://cloud.google.com/bigquery/docs/datasets#create-dataset)
 - [Como carregar dados CSV em uma tabela BigQuery](https://cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv#loading_csv_data_into_a_table)
-- [ETL com Airflow, Google Cloud Storage e BigQuery](https://github.com/okzapradhana/etl-flatfile-airflow#etl-with-airflow-google-cloud-storage-and-bigquery)
 - [Executando o Airflow no Docker](https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html)
+- [ETL com Airflow, Google Cloud Storage e BigQuery](https://github.com/okzapradhana/etl-flatfile-airflow#etl-with-airflow-google-cloud-storage-and-bigquery)
 - [Google Cloud Client Libraries for google-cloud-storage](https://googleapis.dev/python/storage/latest/index.html)
 - [Google Auth Library for Python](https://google-auth.readthedocs.io/en/master/reference/google.oauth2.service_account.html)
 - [Documentação pandas-gbq](https://pandas-gbq.readthedocs.io/en/latest/)
@@ -204,7 +206,24 @@ A fim de facilitar o desenvolvimento das etapas do projeto, abaixo segue um pass
 - [Módulo de autenticação google-auth](https://google-auth.readthedocs.io/en/master/reference/google.oauth2.service_account.html)
 - [Documentation pip v21.3.1](https://pip.pypa.io/en/stable/user_guide/#requirements-files)
 - [Documentação Apache Airflow Exemplo de Pipeline](https://airflow.apache.org/docs/apache-airflow/1.10.1/tutorial.html#example-pipeline-definition)
+- [Módulos de providers do google disponíveis](https://airflow.apache.org/docs/apache-airflow-providers-google/stable/_modules/index.html)
 
 ------
-## 📎 Conclusão
 
+## 📎 Conclusão
+Com o desenvolvido do projeto foi possível obter maiores conhecimentos de libs que facilitam o trabalho de ETL (Extração, Transformação e Carregamento) para o dia a dia de um Engenheiro de Dados, como:
+
+1. Utilizar a lib google-plat-scraper em vez da comumente usada beautifulsoup; 
+2. um diferencial foi conhecer a lib pandas-profiling, com acesso a funções de análise de dados de forma rápida e bem completa para usos mais comuns, encurtando o processo de construção de scripts para cada tipo de análise;
+3. Utilizar o Google Coud Storage em formato de comandos, já que através do qwiklabs é demonstrado em formato manual em sua forma normal;
+4. Um dos maiores desafios dentre os 3 foi buscar informações sobre como construir as DAGs no Apache Airflow. Sua documentação principal é mais limitada, mas após encontrar a documentação com [exemplos de Pipeline](https://airflow.apache.org/docs/apache-airflow/1.10.1/tutorial.html#example-pipeline-definition), foi possível ter uma maior clareza e rapidez em montar as Tasks e DAGs. 
+
+Por fim, o desafio foi uma ótima oportunidade de auto desafio, confiança em desenvolver um projeto "real" utilizando tantas stacks diferentes e construção de um projeto que servirá também como portifólio.
+  
+    Aprendizados:
+
+    A maior dificuldade foi em tentar resolver o erro de *módulo google-play-scraper* não identificado no Apache Airflow. 
+    
+    Busquei desenvolver o pipeline completo seguindo o script etl_with_gcp_and_airflow.py, mas, devido o Apache Airflow ainda não possuir dentro de seu repositório de providers do Google suporte ao módulo do google-play-scrapper (conforme a documentação [Módulos de providers do google disponíveis](https://airflow.apache.org/docs/apache-airflow-providers-google/stable/_modules/index.html)), não foi possível realizar o pipeline com a função de capturar os dados, somente as funções de download dos CSVs do Cloud Storage e envio ao Big Query foi possível realizar (Conforme solicitado no objetivo de tarefa 3).
+    
+    Caso deseje executar o script completo, descomente as últimas linhas do arquivo da função main, execute os comandos para evitar erros de dependências ao executar o script.

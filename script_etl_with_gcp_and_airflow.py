@@ -34,7 +34,7 @@ SCOPE           = ["https://www.googleapis.com/auth/cloud-platform"]            
 
 class etl_with_gcp():
  
-    #Classe de construtores para sempre iniciar por esta antes das demais e subir as chaves
+    # Classe de construtores para sempre iniciar por esta antes das demais e subir as chaves
     def __init__(self):
         #PARA TESTE NO WINDOWS
         self.my_credential = service_account.Credentials.from_service_account_file('C:/Users/cicer/Documents/GitHub/desafio-case-python-sauter/dags/etl_with_gcp_and_airflow/nifty-foundry-336623-dad5e810d66e.json', scopes=SCOPE)
@@ -48,6 +48,7 @@ class etl_with_gcp():
     def scraper_google_play(self):
         
         try:
+            print('Capturando dados, por favor aguarde...')
             resultado_revisao = []                                                  # Criar lista para armazenar os resultados capturados
 
             # Criando uma lista com os resultados das análises do app rastreados 
@@ -61,7 +62,6 @@ class etl_with_gcp():
                     filter_score_with = pontuacao,                                  # Definindo o filtro de acordo com a potuação atual do for 
                 )
             resultado_revisao.extend(resultado)                                     # Salva o resultado de cada captura dentro da ultima possição lista
-            print('Capturando dados, por favor aguarde...')
 
             df_alexa = pd.DataFrame(resultado_revisao)                              # Transforma o resultado em um DataFrame com pandas
             

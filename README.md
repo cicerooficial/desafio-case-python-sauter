@@ -4,6 +4,8 @@
 
 </center>
 
+sdasdasdsadasddsadasdsdasdasdasdasdasdasdasdasdadasdasdasdasdas
+
 # Desafio Sauter: Capturar dados de Loja de Aplicativo - Google Play
 
 <p align="center">

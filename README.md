@@ -63,7 +63,7 @@ A partir desse Data Frame, seguem as atividades propostas na tarefa:
    2. aval_neutra.csv para score igual a 3;
    3. aval_negativa.csv para score inferior a 3.
 
-3. Criar um report simples para essas variáveis utilizando a library [pandas-profiling](https://pandas-profiling.github.io/pandas-profiling/docs/master/index.html) para cada uma das separações (aval_neutra, aval_positiva, aval_negativa). </br>
+3. Criar um report simples para essas variáveis utilizando a library [pandas-profiling](https://pypi.org/project/pandas-profiling/) para cada uma das separações (aval_neutra, aval_positiva, aval_negativa). </br>
    ⚠ É importante notar os principais pontos de cada análise para sua apresentação.</br>
    Finalmente, salvar o resultado do profile em formato .html.
 

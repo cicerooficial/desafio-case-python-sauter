@@ -48,7 +48,7 @@ O Desafio Python tem como objetivo refletir alguns desafios que um Engenheiro de
 
 ### ✅ Tarefa 1:
 
-Sua primeira tarefa é utilizar a library google-play-scraper para capturar dados de apps.
+Sua primeira tarefa é utilizar a library [google-play-scrape](https://pypi.org/project/google-play-scraper/) para capturar dados de apps.
 O app selecionado é o [Alexa](https://play.google.com/store/apps/details?id=com.amazon.dee.app), da Amazon.
 
 1. Utilizando as informações de avaliação do aplicativo, você deve chegar em um Data Frame de review parecido com o demonstrado abaixo:
